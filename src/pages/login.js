@@ -26,7 +26,7 @@ export default function Login({setForm,form,setApiForm}) {
         event.preventDefault();
         axios.post(`${URL}auth/login`, form).then((el) => {
         setApiForm(el.data)
-        navigate("/habitos")
+        navigate("/hoje")
         }).catch(() => alert("não foi"))
     }
    
@@ -43,7 +43,7 @@ export default function Login({setForm,form,setApiForm}) {
                     <button data-test="login-btn" type="submit">Entrar</button>
                 </form>
             </Form>
-            <Link data-test="signup-link" to={"/hoje"} style={{ textDecoration: 'none' }}>
+            <Link data-test="signup-link" to={"/cadastro"} style={{ textDecoration: 'none' }}>
                 <p>Não tem uma conta? Cadastre-se!</p>
             </Link>
 
