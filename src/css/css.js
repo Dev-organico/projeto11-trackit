@@ -62,7 +62,7 @@ export const Form = styled.div`
 export const ConteinerHabits = styled.div`
 
     width: 375px;
-    height: 667px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: #E5E5E5;
@@ -98,10 +98,27 @@ export const CreateHab = styled.div`
     height: 80px;
     width: 375px;
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     margin-top: 70px;
+    p{
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 23px;
+        font-weight: 400;
+        margin-left: 17px;
+        color: #126BA5;
+    }
+    button{
+        width: 40px;
+        height: 35px;
+        background-color:#52B6FF;
+        color:#FFFFFF;
+        font-size: 27px;
+        margin-right: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 `
 
 export const FormHab = styled.div`
@@ -110,19 +127,28 @@ export const FormHab = styled.div`
     margin-left: 17px;
     border-radius: 3px;
     background-color: white;
+    box-sizing: border-box;
+    input{
+        width: 303px;
+        height: 45px;
+        margin-bottom: 6px;
+        border-radius: 3px;
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        color: grey;
+        padding-left: 11px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 18px;
+        margin-left: 19px;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+        color: #DBDBDB;
+        }   
+    }
+    
 `
 
-export const ButtonsDays = styled.div`
-    display:flex;
-    height: 30px;
-    width:235px;
-    button{
-        height: 30px;
-        width: 30px;
-        border-radius: 3px;
-        border:1px solid #DBDBDB;
-        cursor: pointer;
-        color: #DBDBDB;
-        background-color: white;
-    }
-`

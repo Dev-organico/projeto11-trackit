@@ -7,12 +7,14 @@ import Login from './pages/login';
 import { LoginContext } from './context/loginContext';
 import { useState } from 'react';
 import axios from 'axios';
+import Historic from './pages/historico';
+import Today from './pages/today';
 
 
 
 function App() {
 
-  
+  const [percentValue , setPercentValue] = useState(0)
   const [apiForm , setApiForm] = useState({})
   const [form, setForm] = useState({
     email: "",
@@ -22,7 +24,7 @@ function App() {
 
 
   return (
-    <LoginContext.Provider value={{apiForm}}>
+    <LoginContext.Provider value={{apiForm,percentObj,setPercentObj}}>
     <BrowserRouter>
       <GlobalStyles/>
       <Routes>
@@ -34,10 +36,8 @@ function App() {
            />}/>
           <Route path='/cadastro' element={<Registration/>}/>
           <Route path='/habitos' element={<Habits/>}/>
-        
-
-
-
+          <Route path='/hoje' element={<Today/>}/>
+          <Route path='/historico' element={<Historic/>}/>
 
       </Routes>
     </BrowserRouter>

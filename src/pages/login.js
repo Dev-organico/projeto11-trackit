@@ -38,12 +38,12 @@ export default function Login({setForm,form,setApiForm}) {
             <img src={logo} />
             <Form>
                 <form onSubmit={sendForm}>
-                    <input placeholder="e-mail" type="email" name="email" onChange={handleForm} value={form.email} />
-                    <input placeholder="senha" type="password" name="password" onChange={handleForm} value={form.password} />
-                    <button type="submit">Entrar</button>
+                    <input data-test="email-input" placeholder="e-mail" type="email" name="email" onChange={handleForm} value={form.email} />
+                    <input  data-test="password-input" placeholder="senha" type="password" name="password" onChange={handleForm} value={form.password} />
+                    <button data-test="login-btn" type="submit">Entrar</button>
                 </form>
             </Form>
-            <Link to={"/cadastro"} style={{ textDecoration: 'none' }}>
+            <Link data-test="signup-link" to={"/cadastro"} style={{ textDecoration: 'none' }}>
                 <p>Não tem uma conta? Cadastre-se!</p>
             </Link>
 
