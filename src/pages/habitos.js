@@ -152,8 +152,8 @@ const Button = styled.button`
     font-family: 'Lexend Deca', sans-serif;
     margin-right: 4px;
     cursor: pointer;
-    color: ${props => props.selected?"#FFFFFF":"#DBDBDB"} ;
-    background-color:${props => props.selected?"#DBDBDB":"#FFFFFF"} ;
+    color: ${props => props.selected?"#FFFFFF":"#CFCFCF"} ;
+    background-color:${props => props.selected?"#CFCFCF":"#FFFFFF"} ;
 `
 const ButtonsSubmit = styled.div`
     display: flex;

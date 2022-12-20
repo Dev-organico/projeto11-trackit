@@ -121,8 +121,8 @@ const Day = styled.div`
     border-radius: 3px;
     border:1px solid #DBDBDB;
     margin-right: 4px;
-    color: ${props => props.selected ? "#FFFFFF" : "#DBDBDB"} ;
-    background-color:${props => props.selected ? "#DBDBDB" : "#FFFFFF"} ;
+    color: ${props => props.selected ? "#FFFFFF" : "#CFCFCF"} ;
+    background-color:${props => props.selected ? "#CFCFCF" : "#FFFFFF"} ;
 `
 
 const LeftConteiner = styled.div`

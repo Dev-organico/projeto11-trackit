@@ -15,18 +15,17 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
             "Authorization": `Bearer ${token}`
         }
     }
+    
 
-
-    function checkHabit(i,j){
-
-        
-
+    function checkHabit(el){
 
         
+        
+        
 
-        if(j === false){
+        if(el.done === false){
 
-            axios.post(`${URL}habits/${i}/check`,{} , config)
+            axios.post(`${URL}habits/${el.id}/check`,{} , config)
             .then((el)=>{
                 loadTodayHabit()
                 
@@ -39,7 +38,7 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
         }
         else{
 
-            axios.post(`${URL}habits/${i}/uncheck`,{} , config)
+            axios.post(`${URL}habits/${el.id}/uncheck`,{} , config)
             .then((el)=>{
                 loadTodayHabit()
             
@@ -87,7 +86,7 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
                 </LeftDiv>
                 <RightDiv>
                     {el.done === false?<CheckButtonGrey>
-                        <BsCheckSquareFill data-test="today-habit-check-btn" onClick={()=>checkHabit(el.id,el.done)}/>
+                        <BsCheckSquareFill data-test="today-habit-check-btn" onClick={()=>checkHabit(el)}/>
                     </CheckButtonGrey>:
                     <CheckButtonGreen>
                         <BsCheckSquareFill data-test="today-habit-check-btn" onClick={()=>checkHabit(el.id,el.done)}/>
