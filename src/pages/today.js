@@ -54,7 +54,9 @@ export default function Today(){
     return(
         <ConteinerToday>
             <Header/>
-            <p data-test="today">{todayTitle}</p>
+            <Title>
+                <p data-test="today">{todayTitle}</p>
+            </Title>
             <TodayHabits>
     
                 <TodayHabit loadTodayHabit={loadTodayHabit} todayObj={todayObj}/>
@@ -74,6 +76,20 @@ const ConteinerToday = styled.div`
     height:1000px;
     margin-top: 70px;
     background-color:#D4D4D4;
+ 
+
+`
+
+const Title = styled.div`
+    margin-top: 10px;
+       p{
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 23px;
+        font-weight: 400;
+        
+        margin-left: 17px;
+        color: #126BA5;
+    }
 
 `
 const DivLoading = styled.div`

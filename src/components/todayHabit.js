@@ -142,6 +142,20 @@ const Habits = styled.div`
 `
 
 const LeftDiv = styled.div`
+    h1{
+        margin-left: 19px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    h2{
+        margin-left: 19px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 13px;
+        margin-top: 5px;
+
+    }
+   
 `
 
 const RightDiv = styled.div`
@@ -150,21 +164,39 @@ const CheckButtonGrey = styled.div`
     font-size: 69px;
     color:#E7E7E7;
     cursor: pointer;
+    margin-top: 13px;
+    margin-right:13px;
 `
 
 const CheckButtonGreen = styled.div`
     font-size: 69px;
     color: #8FC549;
     cursor: pointer;
+    margin-top: 13px;
+    margin-right:13px;
 
 `
 
 const GreyText = styled.div`
     color: #666666;
+    h2{
+        margin-left: 19px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 13px;
+        margin-top: 5px;
+
+    }
 
 
 `
 
 const GreenText = styled.div`
     color: #8FC549;
+    h2{
+        margin-left: 19px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 13px;
+        margin-top: 5px;
+
+    }
 `
