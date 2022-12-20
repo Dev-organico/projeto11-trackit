@@ -14,7 +14,7 @@ import Today from './pages/today';
 
 function App() {
 
-  const [percentValue , setPercentValue] = useState(0)
+ /*  const [percentValue , setPercentValue] = useState(0) */
   const [apiForm , setApiForm] = useState({})
   const [form, setForm] = useState({
     email: "",
@@ -24,7 +24,7 @@ function App() {
 
 
   return (
-    <LoginContext.Provider value={{apiForm,percentObj,setPercentObj}}>
+    <LoginContext.Provider value={{apiForm}}>
     <BrowserRouter>
       <GlobalStyles/>
       <Routes>

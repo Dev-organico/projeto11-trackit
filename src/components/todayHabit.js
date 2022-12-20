@@ -7,8 +7,8 @@ import axios from "axios"
 
 
 export default function TodayHabit({todayObj, loadTodayHabit}){
-    let percent = 0
-    const {apiForm,percentObj,setPercentObj} = useContext(LoginContext)
+
+    const {apiForm} = useContext(LoginContext)
     const token = apiForm.token
     const config = {
         headers: {
@@ -16,7 +16,6 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
         }
     }
 
-    console.log(percent)
 
     function checkHabit(i,j){
 
@@ -30,10 +29,6 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
             axios.post(`${URL}habits/${i}/check`,{} , config)
             .then((el)=>{
                 loadTodayHabit()
-                const habits = el.data;
-                const doneHabits = el.data.filter(e => e.done === true);
-                
-                
                 
             
             })
@@ -47,10 +42,7 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
             axios.post(`${URL}habits/${i}/uncheck`,{} , config)
             .then((el)=>{
                 loadTodayHabit()
-                const habits = el.data;
-                const doneHabits = el.data.filter(e => e.done === true);
-                const percent = Math.round(doneHabits.length / habits.length * 100); 
-                setPercentObj({percent:percent });
+            
             })
             .catch((el)=>{
             alert(el.response.message)
@@ -81,8 +73,17 @@ export default function TodayHabit({todayObj, loadTodayHabit}){
              <Habits data-test="today-habit-container" key={el.id}>
                 <LeftDiv>
                     <h1 data-test="today-habit-name">{el.name}</h1>
-                    <h2 data-test="today-habit-sequence">{`Sequência atual: ${el.currentSequence}`}</h2>
+                    {el.currentSequence > 0?
+                    <GreenText>
+                        <h2 data-test="today-habit-sequence">{`Sequência atual: ${el.currentSequence}`}</h2>
+                    </GreenText>:
+                    <GreyText>
+                        <h2 data-test="today-habit-sequence">{`Sequência atual: ${el.currentSequence}`}</h2>
+                    </GreyText>
+                    }
+
                     <h2 data-test="today-habit-record">{`Seu recorde: ${el.highestSequence}`}</h2>
+                    
                 </LeftDiv>
                 <RightDiv>
                     {el.done === false?<CheckButtonGrey>
@@ -155,5 +156,15 @@ const CheckButtonGreen = styled.div`
     font-size: 69px;
     color: #8FC549;
     cursor: pointer;
-;
+
+`
+
+const GreyText = styled.div`
+    color: #666666;
+
+
+`
+
+const GreenText = styled.div`
+    color: #8FC549;
 `
